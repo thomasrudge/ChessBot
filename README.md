@@ -1,2 +1,3 @@
 # ChessBot
-Attempt to build a ChessBot using machine learning
+Attempt to build neural network capable of playing chess
+

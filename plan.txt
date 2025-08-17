@@ -1,0 +1,17 @@
+1) Setup the frontend and backend with react and django
+
+FRONTEND:
+1) Create the Board1 component DONE
+
+2) Create the pieces and place them inside the board. DONE
+
+3) Create method Move that:
+    -Takes as input the moving piece , the file and the rank
+    - Makes this move on the chess board, altering the specific piece's position
+
+4) Create method Piece positions that:
+    - Takes as input the positions of each piece
+    - Sends to the backend these pieces
+    
+
+BACKEND:
