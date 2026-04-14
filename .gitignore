@@ -1,0 +1,16 @@
+# Mac junk
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files (too large for git)
+data/raw_data/
+data/formatted_data/
+*.npy
+*.pgn
+
+# Models (too large for git)
+models/
+*.pth
