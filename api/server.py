@@ -19,6 +19,8 @@ app.add_middleware(
 class MoveRequest(BaseModel):
     fen: str
     botId: str
+    moveNumber: int
+    history: list[str]
 
 models = {}
 models["layer-one-control"] = Layer_One_control()
@@ -53,10 +55,18 @@ models["layer-one-shallow"] = Layer_One_shallow()
 models["layer-one-shallow"].load_state_dict(torch.load("models/layer-one-shallow.pth", map_location="cpu"))
 models["layer-one-shallow"].eval()
 
+models["layer-one-adamw"] = Layer_One_control()
+models["layer-one-adamw"].load_state_dict(torch.load("models/layer-one-adamw.pth", map_location="cpu"))
+models["layer-one-adamw"].eval()
+
+models["layer-one-sgd"] = Layer_One_control()
+models["layer-one-sgd"].load_state_dict(torch.load("models/layer-one-sgd.pth", map_location="cpu"))
+models["layer-one-sgd"].eval()
 
 @app.post("/move")
 def get_move(request: MoveRequest):
     # your logic here
+    print(request)
 
     model = models[request.botId]    
 
